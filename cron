@@ -1,1 +1,2 @@
-* * * * * /home/cronjob.sh http://metrics-api:3000/snapshot > /var/log/cron
+*/30 * * * * /home/cronjob.sh http://34.30.22.100:8000/metric/get_nb_issues_by_column > /var/log/cron
+*/30 * * * * /home/cronjob.sh http://34.30.22.100:8000/metric/get_all_issues_lead_time > /var/log/cron
