@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cronjob-app 
+  name: cronjob-app 
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: cronjob-app
+  template:
+    metadata:
+      labels:
+        app: cronjob-app
+    spec:
+      containers:
+      - image: mattcomtoisets/cronjobgrp02eq1:latest 
+        name: cronjob-app
+        imagePullPolicy: Always        
+        resources:
+          limits:
+            cpu: "5m"
+            memory: "5Mi"
+          requests:
+            cpu: "3m"
+            memory: "0Mi"
+          
