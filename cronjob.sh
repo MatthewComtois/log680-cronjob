@@ -8,6 +8,6 @@ then
     exit 1
 fi
 
-curl -XPUT $1
+curl -XGET $1
 
 echo "Snapshot created at `date`"
